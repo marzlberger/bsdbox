@@ -1,0 +1,38 @@
+ROCKET_ADDRESS=0.0.0.0
+export ROCKET_ADDRESS
+
+ROCKET_PORT=8000
+export ROCKET_PORT
+
+ROCKET_TLS='{certs = "/usr/local/www/vaultwarden/data/ssl/vault.crt", key = "/usr/local/www/vaultwarden/data/ssl/vault.key"}'
+export ROCKET_TLS
+
+ADMIN_TOKEN=ADMINTOKEN
+export ADMIN_TOKEN
+
+DOMAIN='https://VAULTHOSTNAME'
+export DOMAIN
+
+SIGNUPS_ALLOWED=true
+export SIGNUPS_ALLOWED
+
+SMTP_HOST=EMAILSERVER
+export SMTP_HOST
+
+SMTP_FROM=EMAILADRESSE
+export SMTP_FROM
+
+SMTP_PORT=587
+export SMTP_PORT
+
+SMTP_SECURE=true
+export SMTP_SSL
+
+SMTP_USERNAME=EMAILADRESSE
+export SMTP_USERNAME
+
+SMTP_PASSWORD=EMAILPASSWORT
+export SMTP_PASSWORD
+
+ORG_GROUPS_ENABLED=true
+export ORG_GROUPS_ENABLED

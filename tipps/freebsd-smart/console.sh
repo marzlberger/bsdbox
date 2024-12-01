@@ -1,3 +1,4 @@
+# https://bsdbox.de/artikel/tipps/freebsd-smart
 pkg install -y smartmontools
 sysrc -f /etc/periodic.conf daily_status_smart_devices="YES"
 service smartd enable

@@ -1,3 +1,4 @@
+# https://bsdbox.de/artikel/tipps/freebsd-email
 pkg install -y dma
 sysrc -f /etc/periodic.conf daily_clean_hoststat_enable="NO"
 sysrc -f /etc/periodic.conf daily_status_mail_rejects_enable="NO"

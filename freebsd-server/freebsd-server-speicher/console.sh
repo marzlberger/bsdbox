@@ -20,6 +20,10 @@ zpool create -f -m /mnt/work work mirror /dev/gpt/$SERIAL4 /dev/gpt/$SERIAL5
 zfs set compression=lz4 atime=off xattr=sa acltype=posixacl data
 zfs set compression=lz4 atime=off xattr=sa acltype=posixacl work
 
+sysrc -f /etc/periodic.conf daily_scrub_zfs_enable="YES"
+sysrc -f /etc/periodic.conf daily_trim_zfs_enable="YES"
+sysrc -f /etc/periodic.conf daily_status_zfs_enable="YES"
+
 glabel list | grep -E "Geom name|1\. Name: gpt" | awk -F": " '/Geom name/ {geom=$2}/1\. Name/ {name=$2; print geom " = " name}' | sort
 zpool status data work
 zpool list data work

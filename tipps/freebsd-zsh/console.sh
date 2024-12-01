@@ -1,3 +1,4 @@
+# https://bsdbox.de/artikel/tipps/freebsd-zsh
 pkg install -y zsh ohmyzsh
 cp /usr/local/share/ohmyzsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s zsh

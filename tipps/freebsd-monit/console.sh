@@ -1,3 +1,4 @@
+# https://bsdbox.de/artikel/tipps/freebsd-monit
 pkg install -y monit
 service monit enable
 ee /usr/local/etc/monitrc

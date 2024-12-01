@@ -1,3 +1,4 @@
+# https://bsdbox.de/artikel/tipps/freebsd-monit-zfs
 ee /usr/local/etc/monitrc
 	check program zfs_health with path "/root/zfs_health_check.sh"
 		if status != 0 then alert

@@ -2,7 +2,8 @@
 # ada0 - ada3 = raidz2 "data"
 # ada4 - ada5 = mirror "work"
 
-# Startover: zpool destroy data work
+# Startover: zpool destroy data
+# Startover: zpool destroy work
 DEVICELIST="ada0 ada1 ada2 ada3 ada4 ada5"
 for DEVICE in $DEVICELIST; do gpart destroy -F $DEVICE; done
 for DEVICE in $DEVICELIST; do gpart create -s gpt $DEVICE && gpart add -t freebsd-zfs -l "$(camcontrol identify $DEVICE | sed -n 's/.*serial number.*\(.\{4\}\)$/\1/p')" -a 4K "$DEVICE"; done

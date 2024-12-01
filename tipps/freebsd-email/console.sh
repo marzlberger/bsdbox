@@ -3,9 +3,6 @@ sysrc -f /etc/periodic.conf daily_clean_hoststat_enable="NO"
 sysrc -f /etc/periodic.conf daily_status_mail_rejects_enable="NO"
 sysrc -f /etc/periodic.conf daily_status_include_submit_mailq="NO"
 sysrc -f /etc/periodic.conf daily_submit_queuerun="NO"
-sysrc -f /etc/periodic.conf daily_scrub_zfs_enable="YES"
-sysrc -f /etc/periodic.conf daily_trim_zfs_enable="YES"
-sysrc -f /etc/periodic.conf daily_status_zfs_enable="YES"
 ee /etc/dma/dma.conf
     SMARTHOST MAILSERVER
     PORT 587

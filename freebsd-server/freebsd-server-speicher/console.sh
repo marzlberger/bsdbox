@@ -19,7 +19,6 @@ zpool create -f -m /mnt/data data raidz2 /dev/gpt/$SERIAL0 /dev/gpt/$SERIAL1 /de
 zpool create -f -m /mnt/work work mirror /dev/gpt/$SERIAL4 /dev/gpt/$SERIAL5
 zfs set compression=lz4 atime=off xattr=sa acltype=posixacl data
 zfs set compression=lz4 atime=off xattr=sa acltype=posixacl work
-
 sysrc -f /etc/periodic.conf daily_scrub_zfs_enable="YES"
 sysrc -f /etc/periodic.conf daily_trim_zfs_enable="YES"
 sysrc -f /etc/periodic.conf daily_status_zfs_enable="YES"

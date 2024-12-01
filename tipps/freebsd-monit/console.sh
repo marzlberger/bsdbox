@@ -18,5 +18,5 @@ ee /usr/local/etc/monitrc
 	   if space usage is greater than 75% then alert 
 	check filesystem WorkZFS with path "/mnt/work"
 	   if space usage is greater than 75% then alert 
-chmod 700 /usr/local/etc/monitrc
+chmod 600 /usr/local/etc/monitrc
 service monit start

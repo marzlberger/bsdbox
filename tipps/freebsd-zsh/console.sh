@@ -1,5 +1,6 @@
 pkg install -y zsh ohmyzsh
-chsh -s zsh USERNAME
-chsh -s zsh
 cp /usr/local/share/ohmyzsh/templates/zshrc.zsh-template ~/.zshrc
-logout
+chsh -s zsh
+# su -l USERNAME -c 'cp /usr/local/share/ohmyzsh/templates/zshrc.zsh-template ~/.zshrc'
+# chsh -s zsh USERNAME
+zsh

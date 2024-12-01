@@ -1,7 +1,7 @@
 # https://bsdbox.de/artikel/tipps/freebsd-firewall
-INTERFACE=`route -n get default | grep 'interface:' | grep -o '[^ ]*$'`
+EXTIF=`route -n get default | grep 'interface:' | grep -o '[^ ]*$'`
 cat > /etc/pf.conf << EOF
-ext_if="${INTERFACE}"
+ext_if="${EXTIF}"
 set block-policy return
 scrub in on $ext_if all fragment reassemble
 set skip on lo

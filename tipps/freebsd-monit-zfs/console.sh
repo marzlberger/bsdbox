@@ -19,7 +19,7 @@ ee /root/zfs_health_check.sh
 	  fi
 	done
 	if [ -n "${ERROR_DETAILS}" ]; then
-	  MISSING_DETAILS="$(/sbin/zpool status -x)"
+	  MISSING_DETAILS="$(/sbin/zpool status -x -e)"
 	  /usr/bin/printf "%s\n" "${MISSING_DETAILS}"
 	  exit 1
 	else

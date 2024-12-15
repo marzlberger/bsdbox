@@ -5,7 +5,6 @@ ee /usr/local/etc/monitrc
 ee /root/zfs_health_check.sh
 	#! /bin/sh
 	/usr/bin/printf "%s\n\n"
-	/usr/bin/printf "%s\n\n" "$(/sbin/zfs list -o name,avail,used -d 0)"
 	/usr/bin/printf "%s\n\n" "$(/sbin/zpool list -o name,size,allocated,free,capacity,health)"
 	ERROR_DETAILS=""
 	LISTPOOLS="$(/sbin/zpool list -H -o name)"

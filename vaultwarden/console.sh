@@ -15,7 +15,7 @@ ROCKET_PORT=8000
 export ROCKET_PORT
 ROCKET_TLS='{certs = "/usr/local/www/vaultwarden/data/ssl/vault.crt", key = "/usr/local/www/vaultwarden/data/ssl/vault.key"}'
 export ROCKET_TLS
-ADMIN_TOKEN=`openssl rand -base64 48 > admintoken.pwd && chmod 600 admintoken.pwd && echo $ADMINTOKEN | argon2 "$(openssl rand -base64 32)" -e -id -k 65540 -t 3 -p 4`
+ADMIN_TOKEN='`openssl rand -base64 48 > admintoken.pwd && chmod 600 admintoken.pwd && echo $ADMINTOKEN | argon2 "$(openssl rand -base64 32)" -e -id -k 65540 -t 3 -p 4`'
 export ADMIN_TOKEN
 DOMAIN=https://`hostname -f`
 export DOMAIN

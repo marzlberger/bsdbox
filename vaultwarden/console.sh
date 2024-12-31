@@ -25,4 +25,5 @@ export ORG_GROUPS_ENABLED
 EOF
 service vaultwarden start
 echo "Admintoken in: /root/admintoken.pwd"
-echo "Admin: https://`hostname -f`8000/admin"
+cat /root/admintoken.pwd
+echo "Admin: https://`hostname -f`:8000/admin"

@@ -3,7 +3,6 @@ sed -e 's|quarterly|latest|g' /etc/pkg/FreeBSD.conf > /usr/local/etc/pkg/repos/F
 pkg update
 pkg install -y vaultwarden
 service vaultwarden enable
-ADMINTOKEN=`openssl rand -base64 48 && echo $ADMINTOKEN > admintoken.pwd && chmod 600 admintoken.pwd`
 install -o www -g www -d /usr/local/www/vaultwarden/data/ssl/
 openssl req -new -x509 -days 3650 -nodes -keyout /usr/local/www/vaultwarden/data/ssl/vault.key -out /usr/local/www/vaultwarden/data/ssl/vault.crt -subj "/C=DE/ST=NRW/L=ERKRATH/O=BSDBOX/OU=IT/CN=vault.bsdbox.local"
 chown www:www /usr/local/www/vaultwarden/data/ssl/*
@@ -16,7 +15,7 @@ ROCKET_PORT=8000
 export ROCKET_PORT
 ROCKET_TLS='{certs = "/usr/local/www/vaultwarden/data/ssl/vault.crt", key = "/usr/local/www/vaultwarden/data/ssl/vault.key"}'
 export ROCKET_TLS
-ADMIN_TOKEN=`openssl rand -base64 48 && echo $ADMINTOKEN > admintoken.pwd && chmod 600 admintoken.pwd`
+ADMIN_TOKEN=`openssl rand -base64 48 > admintoken.pwd && chmod 600 admintoken.pwd && echo $ADMINTOKEN | argon2 "$(openssl rand -base64 32)" -e -id -k 65540 -t 3 -p 4`
 export ADMIN_TOKEN
 DOMAIN=https://`hostname -f`
 export DOMAIN

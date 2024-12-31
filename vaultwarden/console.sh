@@ -1,7 +1,6 @@
 mkdir -p /usr/local/etc/pkg/repos
 sed -e 's|quarterly|latest|g' /etc/pkg/FreeBSD.conf > /usr/local/etc/pkg/repos/FreeBSD.conf
-pkg update
-pkg install -y vaultwarden libargon2
+kkg install -y vaultwarden libargon2
 service vaultwarden enable
 install -o www -g www -d /usr/local/www/vaultwarden/data/ssl/
 openssl req -new -x509 -days 3650 -nodes -keyout /usr/local/www/vaultwarden/data/ssl/vault.key -out /usr/local/www/vaultwarden/data/ssl/vault.crt -subj "/C=DE/ST=NRW/L=ERKRATH/O=BSDBOX/OU=IT/CN=vault.bsdbox.local"

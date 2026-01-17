@@ -1,0 +1,10 @@
+pkg update
+pkg install -y postgresql18-server
+service postgresql enable
+service postgresql initdb
+su -m postgres -c "createuser -s root --pwprompt"
+mkdir /var/db/postgres/bin
+fetch https://raw.githubusercontent.com/marzlberger/bsdbox/main/pgsql/vacuum.sh -o /var/db/postgres/bin/vacuum.sh
+service postgresql start
+echo "0 0 * * * postgres /var/db/postgres/bin/vacuum.sh" >> /etc/crontab
+su -m postgres -c "createuser -s root --pwprompt"

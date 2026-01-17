@@ -8,4 +8,6 @@ bastille bootstrap XX.Y-RELEASE update
 # OPTIONAL: zfs create -o mountpoint=/usr/local/bastille/data data/bastille
 # bastille create JAILNAME XX.Y-RELEASE 10.0.0.10 localnet0
 # bastille create -B -M JAILNAME XX.Y-RELEASE 0.0.0.0 publicnet0
+# bastille config JAILNAME set allow.raw_sockets 1
+# bastille config JAILNAME set allow_sysvipc 1
 # bastille start JAILNAME

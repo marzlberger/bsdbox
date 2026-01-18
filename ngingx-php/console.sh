@@ -1,4 +1,4 @@
-pkg install -y nginx php85 php85-extensions
+pkg install -y nginx php84 php84-extensions
 mkdir /usr/local/etc/nginx/conf.d
 fetch https://raw.githubusercontent.com/marzlberger/bsdbox/main/ngingx-php/nginx.conf -o /usr/local/etc/nginx/nginx.conf
 fetch https://raw.githubusercontent.com/marzlberger/bsdbox/main/ngingx-php/99-custom.ini -o /usr/local/etc/php/99-custom.ini

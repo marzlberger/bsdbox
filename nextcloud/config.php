@@ -6,9 +6,6 @@
 
 $CONFIG = array (
 
-// Disable HTTPS because of upfront HTTPS Proxy
- 'overwriteprotocol' => 'http',
-
 // Set defaultphone region (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
  'default_phone_region' => 'DE',
 
